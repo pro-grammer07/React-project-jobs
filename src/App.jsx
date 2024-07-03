@@ -6,12 +6,10 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Hero title='test title' subtitle='test subtitle'/>
-   
-      {/* <!-- Hero --> */}
-
-
-      {/* <!-- Developers and Employers  --> */}
+      <Hero />
+    
+  
+      {/* <!-- Developers and Employers --> */}
       <section className="py-4">
         <div className="container-xl lg:container m-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
@@ -151,6 +149,7 @@ const App = () => {
         >View All Jobs</a
         >
       </section>
+
     </>
   )
 }
