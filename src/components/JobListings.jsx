@@ -4,15 +4,16 @@ import JobListing from "./JobListing";
 import Spinner from "../components/Spinner";
 
 const JobListings = ({ isHome = false }) => {
-  // const recentJobs = isHome ? jobs.slice(0, 3) : jobs;
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // useEffect(()=> {}, []) we have dependency array, every time the item changes, it gets executed
   useEffect(() => {
     const fetchJobs = async () => {
+      console.log(isHome);
+      const apiUrl = isHome ? "http://localhost:8000/jobs?_limit=3" : "http://localhost:8000/jobs";
       try {
-        const res = await fetch("http://localhost:8000/jobs");
+        const res = await fetch(apiUrl);
         const data = await res.json();
         setJobs(data);
       } catch (error) {
