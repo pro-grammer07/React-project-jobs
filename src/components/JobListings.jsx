@@ -4,6 +4,7 @@ import JobListing from "./JobListing";
 import Spinner from "../components/Spinner";
 
 const JobListings = ({ isHome = false }) => {
+  // const recentJobs = isHome ? jobs.slice(0, 3) : jobs;
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,7 +18,7 @@ const JobListings = ({ isHome = false }) => {
         const data = await res.json();
         setJobs(data);
       } catch (error) {
-        console.log("Error fetching data: ", error);
+        console.log("Error fetching jobs: ", error);
       } finally {
         setLoading(false);
       }
